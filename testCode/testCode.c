@@ -60,9 +60,9 @@ int main()
 	
     fread(inputPixels, sizeof(unsigned char), imageSize, inputFilePointer); // Lees alle pixels (de rest van de file
     fclose(inputFilePointer);
-	inputPixels[i] = inputPixels[i]+1;
+
 	
-	for(i =0; i < imageSize-2; i+=3)
+	for(i =0; i < lengte*8; i++)//for(i =0; i < imageSize-2; i+=3)
 	{
 		printf("pixel %d: B= %d, G=%d, R=%d\n", i, inputPixels[i], inputPixels[i+1], inputPixels[i+2]);
 	}
