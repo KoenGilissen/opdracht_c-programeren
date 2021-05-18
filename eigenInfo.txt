@@ -1,0 +1,12 @@
+*Vanaf rij 30 en kolom 6 begint de kleur info.
+
+*De eerste kleur is --> blauw
+*De tweede kleur is --> groen
+*De derde kleur is --> rood
+
+*Dit patroon herhaalt zich keer op keer
+-----------------------------------------------
+*Voor 1 letter heb je 8 bytes van 8 bits nodig
+
+*Elke laaste bit van een een byte moet aangepast
+worden.
