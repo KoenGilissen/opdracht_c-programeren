@@ -59,10 +59,10 @@ int main()
 	
 	
     fread(inputPixels, sizeof(unsigned char), imageSize, inputFilePointer); // Lees alle pixels (de rest van de file
-    fclose(inputFilePointer);
+    
 
 	
-	for(i =0; i < lengte*8; i++)//for(i =0; i < imageSize-2; i+=3)
+	for(i =0; i < lengte*3; i++)//for(i =0; i < imageSize-2; i+=3)
 	{
 		printf("pixel %d: B= %d, G=%d, R=%d\n", i, inputPixels[i], inputPixels[i+1], inputPixels[i+2]);
 	}
@@ -70,6 +70,13 @@ int main()
 	
     fclose(inputFilePointer);
     free(inputPixels);
+	
+//eigen code 2-----------------------------------------------------------------------------------------------------------------
+	FILE *outputFile = fopen("output.bmp", "wb");
+	fwrite(&inputFilePointer, sizeof(BMPINPUTFILE), 1, inputFilePointer);
+	fclose(inputFilePointer);
+	fclose(outputFile);
+//eigen code 2------------------------------------------------------------------------------------------------------------------
     
     return 0;
 }
