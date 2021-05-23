@@ -10,3 +10,5 @@
 
 *Elke laaste bit van een een byte moet aangepast
 worden.
+
+*Het programma mag pas stoppen bij een *

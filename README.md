@@ -11,3 +11,7 @@ Programas op de computer:
 
 Videos:
 -->https://www.youtube.com/watch?v=UaQjGziw71E
+
+
+Eindresultaat=
+-->werkt niet

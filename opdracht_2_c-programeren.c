@@ -8,6 +8,8 @@
 
 int main()
 {
+	int i = 0;
+	
     #ifdef __DEBUG
         printf("DEBUG info: BMP transformer\n");
     #endif
@@ -33,7 +35,7 @@ int main()
 	
 	lengte = strlen(tekst);
 	
-	printf("%d\n", lengte);
+	printf("De lengte van de string is --> %d\n", lengte);
 	
 	
 // Einde eigen code 1--------------------------------------------------------------------------------------------
@@ -54,17 +56,27 @@ int main()
     int imageSize = 3 * breedte * hoogte; //ieder pixel heeft 3 byte data: rood, groen en blauw (RGB)
     unsigned char* inputPixels = (unsigned char *) calloc(imageSize, sizeof(unsigned char)); // allocate een array voor alle pixels
 	
-
+	
 	
     fread(inputPixels, sizeof(unsigned char), imageSize, inputFilePointer); // Lees alle pixels (de rest van de file
-    fclose(inputFilePointer);
-	for(int i =0; i < lengte; i+=3) //for(int i =0; i < imageSize-2; i+=3)
+    
+
+	
+	for(i =0; i < lengte; i++)//for(i =0; i < imageSize-2; i+=3)
 	{
 		printf("pixel %d: B= %d, G=%d, R=%d\n", i, inputPixels[i], inputPixels[i+1], inputPixels[i+2]);
 	}
-   
+	
+	
     fclose(inputFilePointer);
     free(inputPixels);
+	
+//eigen code 2-----------------------------------------------------------------------------------------------------------------
+	FILE *outputFile = fopen("output.bmp", "wb");
+	fwrite(&inputFilePointer, sizeof(BMPINPUTFILE), 1, inputFilePointer);
+	fclose(inputFilePointer);
+	fclose(outputFile);
+//eigen code 2------------------------------------------------------------------------------------------------------------------
     
     return 0;
 }
