@@ -1,5 +1,8 @@
 # opdracht_c-programeren
 
+Dit programma moet een secret message in een BMP
+file steken.
+
 In deze README zet ik alles wat ik gebruikt heb.
 
 code:
